@@ -4,7 +4,6 @@ exports.handler = function (event, context, callback) {
 	cognito_idp.listUsers({
 		UserPoolId: "us-east-1_7IHKjs5eP",
 		AttributesToGet: '[email]',
-		PaginationToken: '1'
 	}, function (error, data) {
 		if (error) {
 			// implement error handling logic here
