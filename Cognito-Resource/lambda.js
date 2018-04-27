@@ -21,12 +21,18 @@ exports.handler = function (event, context, callback) {
 		Username: "andun@adroitlogic.com",
 
 		/* required */
-		DesiredDeliveryMediums: ["EMAIL"],
+		DesiredDeliveryMediums: ["SMS", "EMAIL"],
 		//[SMS | EMAIL,/* more items */],
 		ForceAliasCreation: false,
 		MessageAction: "RESEND",
 		TemporaryPassword: "Andun!12345",
-		UserAttributes: [],
+		UserAttributes: [{
+			Name: 'email',
+			Value: 'andun@adroitlogic.com'
+		}, {
+			Name: 'phone_number',
+			Value: '+94770630943'
+		}],
 		ValidationData: []
 	}, function (error, data) {
 		if (error) {
