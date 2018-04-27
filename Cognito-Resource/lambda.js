@@ -15,13 +15,18 @@ exports.handler = function (event, context, callback) {
 		// your logic goes within this block
 	});
 	cognito_idp.adminCreateUser({
-		UserPoolId: "us-east-1_7IHKjs5eP", /* required */
-		Username: "andun@adroitlogic.com", /* required */
-		DesiredDeliveryMediums: ["EMAIL"],//[SMS | EMAIL,/* more items */],
+		UserPoolId: "us-east-1_7IHKjs5eP",
+
+		/* required */
+		Username: "andun@adroitlogic.com",
+
+		/* required */
+		DesiredDeliveryMediums: ["EMAIL"],
+		//[SMS | EMAIL,/* more items */],
 		ForceAliasCreation: false,
 		MessageAction: "RESEND",
 		TemporaryPassword: "Andun!12345",
-		UserAttributes: [{ Name: 'name', Value: 'andun' }],
+		UserAttributes: [],
 		ValidationData: []
 	}, function (error, data) {
 		if (error) {
