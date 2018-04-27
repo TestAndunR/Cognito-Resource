@@ -18,10 +18,10 @@ exports.handler = function (event, context, callback) {
 		UserPoolId: "us-east-1_7IHKjs5eP",
 
 		/* required */
-		Username: "andun@adroitlogic.com",
+		Username: "andun++@adroitlogic.com",
 
 		/* required */
-		DesiredDeliveryMediums: ["SMS", "EMAIL"],
+		DesiredDeliveryMediums: ["EMAIL"],
 		//[SMS | EMAIL,/* more items */],
 		ForceAliasCreation: false,
 		MessageAction: "RESEND",
