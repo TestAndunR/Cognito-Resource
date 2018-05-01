@@ -24,7 +24,7 @@ exports.handler = function (event, context, callback) {
 		DesiredDeliveryMediums: ["EMAIL"],
 		//[SMS | EMAIL,/* more items */],
 		ForceAliasCreation: false,
-		MessageAction: "RESEND",
+		MessageAction: "SUPPRESS",
 		TemporaryPassword: "Andun!12345",
 		UserAttributes: [{
 			Name: 'email',
