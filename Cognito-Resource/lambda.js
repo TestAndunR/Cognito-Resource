@@ -1,4 +1,7 @@
 let AWS = require('aws-sdk');
+let connectionManager = require('./ConnectionManager');
+let SL_AWS = require('slappforge-sdk-aws');
+const rds = new SL_AWS.RDS(connectionManager);
 const ses = new AWS.SES();
 const cognito_idp = new AWS.CognitoIdentityServiceProvider();
 exports.handler = function (event, context, callback) {
@@ -40,11 +43,18 @@ exports.handler = function (event, context, callback) {
 			console.log("error occured");
 			// implement error handling logic here
 			throw error;
-		}else{
+		} else {
 			console.log("Success");
 			console.log(data);
 		}
 		// your logic goes within this block
+	});
+
+	// You must always end/destroy the DB connection after it's used
+	rds.beginTransaction({
+		instanceIdentifier: 'UserPoolDB'
+	}, function (error, connection) {
+		if (error) { throw err; }
 	});
 
 
