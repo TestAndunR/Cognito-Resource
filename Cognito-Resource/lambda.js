@@ -44,5 +44,17 @@ exports.handler = function (event, context, callback) {
 		// your logic goes within this block
 	});
 
+	cognito_idp.adminGetUser({
+		UserPoolId: "us-east-1_7IHKjs5eP", /* required */
+		Username: "andun" /* required */
+	}, function (error, data) {
+		if (error) {
+			// implement error handling logic here
+			throw error;
+		}
+		// your logic goes within this block
+	});
+
+
 	callback(null, 'Successfully executed');
 }
