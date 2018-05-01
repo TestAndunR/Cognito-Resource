@@ -31,20 +31,7 @@ exports.handler = function (event, context, callback) {
 		// your logic goes within this block
 
 	});
-	cognito_idp.adminDeleteUser({
-		UserPoolId: "us-east-1_7IHKjs5eP", /* required */
-		Username: "andunranmal1" /* required */
-	}, function (error, data) {
-		if (error) {
-			console.log("Error");
-			// implement error handling logic here
-			throw error;
-		} else {
-			console.log("Success");
-			console.log(data);
-		}
-		// your logic goes within this block
-	});
+
 	cognito_idp.adminDisableUser({
 		UserPoolId: "us-east-1_7IHKjs5eP", /* required */
 		Username: "andunranmal2" /* required */
